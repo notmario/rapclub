@@ -9,7 +9,7 @@ songs["big-man-roofless"] = {
   "music": "mus/redman-roofless-inst.ogg",
   "vocals": "mus/redman-roofless-vocals-redman.ogg",
   "vocals2": "mus/redman-roofless-vocals-tghazard.ogg",
-  "vocals2alt": "mus/redman-roofless-vocals-ball.ogg",
+  "vocals2alt": "mus/redman-roofless-vocals-bf.ogg",
   "playerPosOffsetX": 400,
   "playerPosOffsetY": 400,
   "noteDrainMultiplier": 2,
