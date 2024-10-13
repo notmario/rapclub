@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rap Club</title>
+  <meta name="description" content="Wow rapping!">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/redman.png">
+</head>
+<body>
+  <canvas width="1920" height="1080"></canvas>  
+  <script>const songs = {}; let totalLoadSongs = 2; let songsLoaded = 0; const barsToNotes = (bars,barlength,offset)=>{
+    tempNotes = [];
+    bars.forEach((element, i) => {
+      if (element.length === 0) return;
+      element.forEach((note, j) => {
+        tempnoteobj = {...note};
+        tempnoteobj.pos = (i * barlength) + tempnoteobj.pos + offset;
+        tempNotes.push(tempnoteobj);
+      });
+    });
+    return tempNotes;
+  };
+    // load miss.ogg
+    const miss = new Audio('mus/miss.ogg');
+    miss.addEventListener("canplaythrough", ()=>{
+      songsLoaded++;
+    })
+    const win = new Audio('mus/win.ogg');
+    win.addEventListener("canplaythrough", ()=>{
+      songsLoaded++;
+    })
+  </script>
+
+  <script src="achievements.js"></script>
+  <script src="songs/redman.js"></script>
+  <script src="songs/redman-roofless.js"></script>
+
+  <!-- <script src="songs/tutorial.js"></script>
+
+  <script src="songs/bigshot.js"></script>
+  <script src="songs/megalovania.js"></script>
+  <script src="songs/moneygame.js"></script>
+
+  <script src="songs/phatsketch.js"></script>
+  <script src="songs/electrocabello.js"></script>
+  <script src="songs/spazzmaticapolka.js"></script>
+
+  <script src="songs/confrontingyourself.js"></script>
+
+  <script src="songs/fresh.js"></script>
+  <script src="songs/spookeez.js"></script>
+  <script src="songs/pico.js"></script>
+  <script src="songs/mother.js"></script>
+  <script src="songs/roses.js"></script>
+  <script src="songs/ugh.js"></script>
+  <script src="songs/lofight.js"></script>
+  <script src="songs/ballistic.js"></script>
+  <script src="songs/casanova.js"></script>
+  <script src="songs/endless.js"></script>
+  <script src="songs/expurgation.js"></script>
+  <script src="songs/godeater.js"></script>
+  <script src="songs/sporting.js"></script>
+  
+  <script src="songs/octoalert.js"></script>
+  <script src="songs/freshWholesomeKeanuReeves.js"></script>
+  <script src="songs/loopingsteps.js"></script>
+  <script src="songs/casanova-badchart.js"></script>
+  <script src="songs/tripletrouble.js"></script>
+  <script src="songs/skillissue.js"></script>
+  <script src="songs/schoolthismonday.js"></script>
+
+  <script src="songs/freshostversion.js"></script>
+
+  <script src="songs/ohgod.js"></script> -->
+
+  <script src="index.js" defer></script>
+  <img src="img/up.png" alt="up arrow" id="upArrowImage">
+  <img src="img/down.png" alt="down arrow" id="downArrowImage">
+  <img src="img/right.png" alt="right arrow" id="rightArrowImage">
+  <img src="img/left.png" alt="left arrow" id="leftArrowImage">
+
+  <img src="img/upfake.png" alt="up arrow" id="fakeUpArrowImage">
+  <img src="img/downfake.png" alt="down arrow" id="fakeDownArrowImage">
+  <img src="img/rightfake.png" alt="right arrow" id="fakeRightArrowImage">
+  <img src="img/leftfake.png" alt="left arrow" id="fakeLeftArrowImage">
+
+  <img src="img/notereceptacle.png" alt="arrow receptacle" id="noteReceptacle">
+  <img src="img/notereceptaclelefthalf.png" alt="arrow receptacle" id="noteReceptacleLeftHalf">
+  <img src="img/notereceptaclerighthalf.png" alt="arrow receptacle" id="noteReceptacleRightHalf">
+
+  <img src="img/blissbg.jpeg" id="blissBG">
+  <img src="img/blissbgdark.jpeg" id="blissDarkBG">
+
+  <img src="img/renderforestneutral.png" id="renderforestneutral">
+  <img src="img/renderforestleft.png" id="renderforestleft">
+  <img src="img/renderforestright.png" id="renderforestright">
+  <img src="img/renderforestup.png" id="renderforestup">
+  <img src="img/renderforestdown.png" id="renderforestdown">
+  <img src="img/renderforestdeath.png" id="renderforestdeath">
+  <img src="img/renderforestdialogue.png" id="renderforestdialogue">
+
+  <img src="img/hazardneutral.png" id="hazardneutral">
+  <img src="img/hazardleft.png" id="hazardleft">
+  <img src="img/hazardright.png" id="hazardright">
+  <img src="img/hazardup.png" id="hazardup">
+  <img src="img/hazarddown.png" id="hazarddown">
+  <img src="img/hazarddeath.png" id="hazarddeath">
+  
+  <img src="img/funnyamongneutral.png" id="funnyamongneutral">
+  <img src="img/funnyamongleft.png" id="funnyamongleft">
+  <img src="img/funnyamongright.png" id="funnyamongright">
+  <img src="img/funnyamongup.png" id="funnyamongup">
+  <img src="img/funnyamongdown.png" id="funnyamongdown">
+  <img src="img/funnyamongdeath.png" id="funnyamongdeath">
+  <img src="img/funnyamongdialogue.png" id="funnyamongdialogue">
+
+  <img src="img/redman.png" id="redmanneutral">
+  <img src="img/redmanleft.png" id="redmanleft">
+  <img src="img/redmanright.png" id="redmanright">
+  <img src="img/redmanup.png" id="redmanup">
+  <img src="img/redmandown.png" id="redmandown">
+  <img src="img/redmandialogue.png" id="redmandialogue">
+
+  <img src="img/wasted.png" id="wasted">
+
+  <img src="img/musicalnotes.png" id="dollarcash">
+  <img src="img/musicalnotesred.png" id="dollarcashOrange">
+
+  <img src="img/sick.png" id="sickParticle">
+  <img src="img/good.png" id="goodParticle">
+  <img src="img/shit.png" id="shitParticle">
+
+  <img src="img/normal.png" id="normaldiffimage">
+  <img src="img/easy.png" id="easydiffimage">
+  <img src="img/hard.png" id="harddiffimage">
+  <img src="img/roofless.png" id="rooflessdiffimage">
+
+  <img src="img/dialoguebox.png" id="dialoguebox">
+
+  <img src="img/perfect.png" id="perfect">
+  
+  <img src="img/achievements/gun.png" id="achievement-gun">
+  <img src="img/achievements/winwithminusscore.png" id="achievement-winwithminusscore">
+  <img src="img/achievements/tisbutascratch.png" id="achievement-tisbutascratch">
+  <img src="img/achievements/tutorial.png" id="achievement-tutorial">
+  <img src="img/achievements/tutorialhard.png" id="achievement-tutorialhard">
+  <img src="img/achievements/tutorialperfect.png" id="achievement-tutorialperfect">
+  <img src="img/achievements/week1.png" id="achievement-week1">
+  <img src="img/achievements/week1hard.png" id="achievement-week1hard">
+  <img src="img/achievements/week1perfect.png" id="achievement-week1perfect">
+  <img src="img/achievements/week2.png" id="achievement-week2">
+  <img src="img/achievements/week2hard.png" id="achievement-week2hard">
+  <img src="img/achievements/week2perfect.png" id="achievement-week2perfect">
+  <img src="img/achievements/week3.png" id="achievement-week3">
+  <img src="img/achievements/week3hard.png" id="achievement-week3hard">
+  <img src="img/achievements/week3perfect.png" id="achievement-week3perfect">
+  <img src="img/achievements/freedom.png" id="achievement-freedom">
+  <img src="img/achievements/trolled.png" id="achievement-secretweek">
+  <img src="img/achievements/p.png" id="achievement-p">
+  <img src="img/achievements/fatalmiscalculation.png" id="achievement-fatalmiscalculation">
+  <img src="img/achievements/costumechange.png" id="achievement-costumechange">
+</body>
+</html>
